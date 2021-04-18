@@ -1,0 +1,125 @@
+@info:#26baee;
+@success:#19be6b;
+@warning:#ff9900;
+@error:#ed4014;
+
+@navBgColor: #1b262c;
+@title:#1f3349;
+@font:#707788;
+@border:#e8e8e8;
+@bgColor:#f4f7fb;
+
+
+.shadow {
+	box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
+	transition: box-shadow .3s
+}
+
+.dropdown {
+	position: absolute;
+	border-radius: 0 0 6px 6px;
+	overflow: hidden;
+	font-size: 14px;
+	animation-name: drop;
+	animation-duration: .2s;
+	transform-origin: top;
+	border-top: 1px solid @border;
+	z-index: 100;
+	top: 50px
+}
+
+@keyframes drop {
+	0% {
+		transform: scaleY(.5);
+		opacity: 0
+	}
+}
+
+a {
+  text-decoration: none;
+}
+
+
+input, textarea, button, select {
+  width: 100%;
+  display: block;
+  border: .01rem solid @border;
+  padding: .04rem .11rem;
+  min-height: .32rem;
+  color: rgba(0,0,0,.65);
+  font-size: .14rem;
+  border-radius: .04rem;
+  background-color: #fff;
+  resize: none;
+  &::placeholder{
+    color: rgba(0,0,0,.45);
+  }
+  &:disabled{
+    cursor: no-drop
+  }
+  &:focus,&:hover{
+    transition: all .3s;
+    outline: none;
+    border-color: @info;
+    border-right-width: 1px!important;
+  }
+}
+select {
+  padding: 0;
+}
+button {
+  &:focus,&:hover{
+    color: @info;
+    cursor: pointer;
+  }
+}
+
+textarea{
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: transparent;
+  }
+}
+
+.del_icon {
+  display: block;
+  margin-left: .08rem;
+  width: .16rem;
+  height: .16rem;
+  line-height: .16rem;
+  font-size: .14rem;
+  text-align: center;
+  background-color: #ff4d4f;
+  color: white;
+  cursor: pointer;
+  border-radius: .02rem;
+  font-style: normal;
+  &::before{
+    content: '×';
+  }
+}
+
+@media screen and (min-width: 750px) {
+  section,.amber_nav_scroll{
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: rgba(0,0,0,.2);
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 0px;
+      background: transparent;
+    }
+  }
+}
