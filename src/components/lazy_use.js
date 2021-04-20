@@ -1,15 +1,15 @@
 
 import Vue from 'vue'
 
-import $Modal from '@/utils/Modal'
 import $px2rem from '@/utils/px2rem'
 
-import Modal from '@/components/Modal'
-import Button from "@/components/Button"
-import Spin from "@/components/Spin"
+import {
+    Table,
+    Switch,
+    Tabs
+} from 'ant-design-vue';
 
-Vue.component('Modal', Modal)
-Vue.component('Button', Button)
-Vue.component('Spin', Spin)
-Vue.use($Modal)
+Vue.use(Table)
+Vue.use(Tabs)
+Vue.use(Switch)
 Vue.use($px2rem)

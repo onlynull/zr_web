@@ -3,7 +3,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    DCW: document.documentElement.clientWidth // 动态监听屏幕宽度
+    DCW: document.documentElement.clientWidth, // 动态监听屏幕宽度
+    token: 0
   },
   getters: {},
   mutations: {

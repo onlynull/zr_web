@@ -6,15 +6,16 @@ import router from './router'
 
 import store from '@/store'
 
+import 'ant-design-vue/dist/antd.css';
 import '@/components/lazy_use'
+import { islogin } from '@/common/api'
 
 Vue.config.productionTip = false
 // router.beforeEach( async (to, from, next) => {
-//   next()
 //   if (to.name !== 'Login') {
 //     try {
-//       const res = await getUser()
-//       if (res.status === 2){
+//       const res = await islogin()
+//       if (res.code !== 200){
 //         next('/login')
 //       }else{
 //         next()

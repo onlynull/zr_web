@@ -8,14 +8,13 @@
       </section>
     </div>
     <router-view v-else />
-    <Modal />
   </div>
 </template>
 
 <script>
 import TitleBar from '@/Layout/TitleBar'
 import Nav from '@/Layout/Nav'
-import { modules } from '@/common/api'
+import { islogin } from '@/common/api'
 export default {
   name: 'App',
   components: { TitleBar, Nav },
@@ -30,10 +29,6 @@ export default {
     }
   },
   mounted () {
-    modules()
-      .then(res => {
-        console.log(res)
-      })
     window.addEventListener('resize', () => {
       this.$store.commit('CHANGEDCW')
     })
@@ -46,11 +41,10 @@ export default {
         this.login = false
       }
       const dom = document.getElementById('router_view')
-      dom.scrollTop = 0
+      if (dom) {
+        dom.scrollTop = 0
+      }
     }
-  },
-  beforeUpdate () {
-    this.$Modal.remove()
   }
 }
 </script>

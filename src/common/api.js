@@ -1,15 +1,16 @@
 import service from './http'
 
-export function login () {
+export function login (params) {
 	return service({
-		url: '/login?token=www123',
-		method: 'get'
+		url: '/api/login',
+		method: 'get',
+		params
 	})
 }
 
-export function modules () {
+export function islogin () {
 	return service({
-		url: '/api/modules',
+		url: '/api/islogin',
 		method: 'get'
 	})
 }

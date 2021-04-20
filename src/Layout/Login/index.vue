@@ -2,9 +2,8 @@
     <div class="login">
         <div class="main">
             <!-- <img src="@/assets/img/logo.png" alt="logo"> -->
-            <input placeholder="请输入账号" type="text" v-model="name" />
-            <input placeholder="请输入密码" type="password" v-model="pass" />
-            <div @click="yanzheng" class="btn">验证</div>
+            <input placeholder="请输入账号" type="text" v-model="token" />
+            <div @click="login" class="btn">验证</div>
         </div>
     </div>
 </template>
@@ -13,13 +12,21 @@ import { login } from '@/common/api'
 export default{
     data () {
         return {
-            name: null,
-            pass: null
+            token: 'www123'
         }
     },
     methods: {
         login () {
-            login({})
+            const params = {
+                token: this.token
+            }
+            login(params)
+                .then(res => {
+                    if (res.code === 200) {
+                        // 登陆成功
+                        this.$router.replace('/')
+                    }
+                })
         }
     },
     created () {

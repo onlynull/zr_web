@@ -13,6 +13,11 @@ export default new Router({
       }
     },
     {
+      path: '/login',
+      name: 'Login',
+      component: () => import(/* webpackChunkName: "login" */ '@/Layout/Login'),
+    },
+    {
       path: '/404',
       name: '404',
       component: () => import(/* webpackChunkName: "404" */ '@/components/404'),
